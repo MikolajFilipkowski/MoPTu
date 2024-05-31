@@ -5,6 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.ListView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.moptu.adapters.ExploreCategoriesAdapter
+import com.example.moptu.adapters.RecyclerAdapter
+import java.util.Dictionary
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +28,8 @@ class ExploreFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var explore_view:RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +42,33 @@ class ExploreFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val rootView = inflater.inflate(R.layout.fragment_explore, container, false)
+
+
+        val dict = ArrayList<ArrayList<String>>()
+
+        dict.add(arrayListOf("WYSOKA BRAMA","",getString(R.string.wysoka_brama)))
+        dict.add(arrayListOf("ŁAWECZKA MIKOŁAJA KOPERNIKA","",getString(R.string.laweczka)))
+        dict.add(arrayListOf("ZAMEK KAPITUŁY WARMIŃSKIEJ","",getString(R.string.zamek)))
+        dict.add(arrayListOf("STARY RATUSZ","",getString(R.string.ratusz)))
+        dict.add(arrayListOf("DOM GAZETY OLSZTYŃSKIEJ","",getString(R.string.gazeta)))
+
+
+        val customAdapter = ExploreCategoriesAdapter(dict)
+
+        val recyclerView: RecyclerView = rootView.findViewById(R.id.explore_view)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter = customAdapter
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false)
+        return rootView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        explore_view = view.findViewById(R.id.explore_view)
+
+        //explore_view.adapter = Adapter
     }
 
     companion object {

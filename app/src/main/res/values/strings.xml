@@ -2,4 +2,9 @@
     <string name="app_name">MoPTu</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wysoka_brama">Masywna gotycka budowla o dominującej nad staromiejskimi kamienicami sylwetce to jeden z najbardziej charakterystycznych zabytków Olsztyna. Wysoka Brama jest najokazalszą pozostałością średniowiecznych obwarowań miasta i jedyną zachowaną spośród trzech bram wchodzących w ich skład (pozostałe to Dolna i Młyńska).</string>
+    <string name="laweczka">Będąc w Olsztynie, koniecznie trzeba przywitać się z Kopernikiem! Pamięć o wielkim astronomie czczona jest w mieście na różne sposoby, a najbardziej znanym z nich – i zapewne najsympatyczniejszym – jest „ławeczka”, na której można przysiąść obok wykonanej z brązu postaci mistrza Mikołaja.</string>
+    <string name="zamek">Gotycki zamek to najstarszy i najbardziej okazały zabytek stolicy Warmii i Mazur. Przez wieki stanowił serce miasta, które rozwijało się w jego cieniu. Kiedyś był domem Mikołaja Kopernika, obecnie mieści się tu siedziba Muzeum Warmii i Mazur, a komnaty i dziedziniec stoją otworem przed zwiedzającymi.</string>
+    <string name="ratusz">Stary Ratusz zajmuje centralne miejsce rynku staromiejskiego i powstał jako siedziba władz Olsztyna. Gotycka część budowli, czyli obecne skrzydło południowe, to jeden z najstarszych zabytków architektury w mieście.</string>
+    <string name="gazeta">Dwukondygnacyjny budynek z czerwonej cegły wzniesiono na początku XX w. na obrzeżach staromiejskiego Targu Rybnego. W latach 1920-39 mieściła się tutaj redakcja i drukarnia krzewiącej polskość „Gazety Olsztyńskiej”.</string>
 </resources>
