@@ -47,14 +47,14 @@ class ExploreFragment : Fragment() {
 
         val dict = ArrayList<ArrayList<String>>()
 
-        dict.add(arrayListOf("WYSOKA BRAMA","",getString(R.string.wysoka_brama)))
-        dict.add(arrayListOf("ŁAWECZKA MIKOŁAJA KOPERNIKA","",getString(R.string.laweczka)))
-        dict.add(arrayListOf("ZAMEK KAPITUŁY WARMIŃSKIEJ","",getString(R.string.zamek)))
-        dict.add(arrayListOf("STARY RATUSZ","",getString(R.string.ratusz)))
-        dict.add(arrayListOf("DOM GAZETY OLSZTYŃSKIEJ","",getString(R.string.gazeta)))
+        dict.add(arrayListOf("WYSOKA BRAMA","brama",getString(R.string.wysoka_brama)))
+        dict.add(arrayListOf("ŁAWECZKA MIKOŁAJA KOPERNIKA","lawka",getString(R.string.laweczka)))
+        dict.add(arrayListOf("ZAMEK KAPITUŁY WARMIŃSKIEJ","zamek",getString(R.string.zamek)))
+        dict.add(arrayListOf("STARY RATUSZ","ratusz",getString(R.string.ratusz)))
+        dict.add(arrayListOf("DOM GAZETY OLSZTYŃSKIEJ","gazeta",getString(R.string.gazeta)))
 
 
-        val customAdapter = ExploreCategoriesAdapter(dict)
+        val customAdapter = ExploreCategoriesAdapter(dict, context)
 
         val recyclerView: RecyclerView = rootView.findViewById(R.id.explore_view)
         recyclerView.layoutManager = LinearLayoutManager(activity)

@@ -1,14 +1,18 @@
 package com.example.moptu.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moptu.ArticleDataClass
+import com.example.moptu.DetailsFragment
 import com.example.moptu.R
+import com.google.android.material.card.MaterialCardView
 
-class ExploreCategoriesAdapter(private val dataSet: ArrayList<ArrayList<String>>) :
+class ExploreCategoriesAdapter(private val dataSet: ArrayList<ArrayList<String>>, private val appContext: Context?) :
     RecyclerView.Adapter<ExploreCategoriesAdapter.ViewHolder>() {
 
     /**
@@ -17,10 +21,16 @@ class ExploreCategoriesAdapter(private val dataSet: ArrayList<ArrayList<String>>
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val categoryView: TextView
+        val materialCardView: MaterialCardView
 
         init {
             // Define click listener for the ViewHolder's View
             categoryView = view.findViewById(R.id.categoryView)
+            materialCardView = view.findViewById(R.id.categoryMaterialCardView)
+
+            materialCardView.setOnClickListener {
+                it.rootView.context
+            }
         }
     }
 
@@ -33,9 +43,17 @@ class ExploreCategoriesAdapter(private val dataSet: ArrayList<ArrayList<String>>
         return ViewHolder(view)
     }
 
+
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
+
+        viewHolder.materialCardView.setOnClickListener {
+            (appContext as AppCompatActivity)?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.fragment_container, DetailsFragment.newInstance(dataSet[position]))
+                ?.commit()
+        }
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.categoryView.text = dataSet[position][0]

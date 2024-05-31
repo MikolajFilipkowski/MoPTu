@@ -16,6 +16,7 @@
         app:cardCornerRadius="15dp"
         app:contentPadding="10dp"
         android:clickable="true"
+        android:id="@+id/categoryMaterialCardView"
         >
 
         <LinearLayout
